@@ -1,0 +1,5 @@
+/* Essencial para usabilidade de quem usa teclado */
+button {
+outline: 3px solid #f1c40f;
+background-color: #1b5e20;
+}
