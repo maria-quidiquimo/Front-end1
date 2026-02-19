@@ -53,16 +53,19 @@ body{
 }
 
 .card{
-    border: 1px solid rgb(127, 0, 0);
+    border: 1px solid rgb(255, 171, 135);
     padding: 15px;
     border-radius: 20px;
     text-align: center;
+    background-color: rgb(255, 250, 248);
+    box-shadow: 0 4px 8px rgb(255, 163, 163);
 }
 
 .card img{  /* qualquer imagem dentro de card*/
    max-width: 100%;
    height: auto;
    border-radius: 15px;
+   
 }
 
 .preco{ /* span é inline level */
@@ -101,6 +104,59 @@ body{
 @media only screen and (max-width: 480px) {
     h1{
         font-size: 1.2rem;
+    }
+}
+
+/*Tela Tablet*/
+
+@media screen and (min-width: 601px) and (max-width: 1024px){
+    .vitrine-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*tela celular*/
+
+@media screen and (max-width:600px), (orientation: portrait)/* orientação em retrato ou paisagem (celular na horizontal ou vertical)*/{
+    /*menu hamburguer ou responsivo*/
+    #label-menu{
+        display: block;
+        font-size: 2.5rem;
+        color: rgb(255, 224, 166);
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    #menu ul{
+        display: none;
+    }
+
+    /*verificando o bt_menu se está clicando e se tem irmão #menu*/
+    #bt_menu:checked ~ #menu ul{ /*altera as opções de nav*/
+        display: block;
+        padding: 10px 0;
+    }
+
+
+    .vitrine-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .desc{ /*tira a descrição do produto no celular*/
+        display: none;
+    }
+
+    #menu li{
+        display: block;
+        margin: 15px 0;
+        border-bottom: 1px solid black ;/*Cria linhas*/
+        padding-bottom: 10px;
+    }
+}
+
+@media not screen { /*quando não for uma tela*/
+    #menu, #bt-pedido, #label-menu, #bt_menu{
+        display: none;
     }
     
 }
