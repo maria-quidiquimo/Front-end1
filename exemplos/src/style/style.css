@@ -38,3 +38,12 @@
     color: rgb(127, 0, 0);
     
 }
+
+/* Estrutura inicial grid - desktop*/
+
+.vitrine-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
