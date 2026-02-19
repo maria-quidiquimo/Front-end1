@@ -5,6 +5,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    background-color: rgb(255, 246, 238);
+}
+
 #topo-loja{
     background-color: rgb(127, 0, 0);
     color: rgb(255, 246, 238);
@@ -49,5 +53,54 @@
 }
 
 .card{
+    border: 1px solid rgb(127, 0, 0);
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.card img{  /* qualquer imagem dentro de card*/
+   max-width: 100%;
+   height: auto;
+   border-radius: 15px;
+}
+
+.preco{ /* span é inline level */
+    display: block; /*vira block level*/
+    color:rgb(210, 10, 10);
+    font-weight: bold;
+    margin: 10px /* cima baixo */ 0 /* esquerda direita */;
+}
+
+.bt-pedido{
+    background-color: rgb(127, 0, 0);
+    color: rgb(255, 246, 238);
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer; /*passou em cima do botão muda o negócio do mouse*/
+}
+
+#rodape{
+     background-color: rgb(127, 0, 0);
+    color: rgb(255, 246, 238);
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/*MEDIAS*/
+
+@media screen {
+    #topo-loja h1{
+        letter-spacing: 2px; /*espaço entre as letras do logo*/
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1{
+        font-size: 1.2rem;
+    }
     
 }
