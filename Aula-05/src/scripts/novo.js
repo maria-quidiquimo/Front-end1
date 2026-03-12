@@ -45,5 +45,5 @@ console.log("Resultado de seletor inexistente:", elementoInexistente); // Retorn
 
 tituloMacarrao.style.color = "#e67e22"
 
-card_lasanha.classList.add('.em-promocao')
+card_lasanha.classList.add('em-promocao')
 

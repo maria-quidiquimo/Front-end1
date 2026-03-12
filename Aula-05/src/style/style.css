@@ -160,3 +160,11 @@ body{
     }
     
 }
+
+/*Important: se eu preciso sobrescrever qualquer linha de alteração (no caso borda)*/
+.em-promocao{
+    border: 3px solid #f0303d !important;
+    background-color: #fbcccc;
+    transform: scale(1.05);
+    box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.1); /*Primeiro px: angulo x; segundo px: angulo y; terceiro px: opacidade.*/
+}
