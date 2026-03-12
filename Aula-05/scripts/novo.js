@@ -1,25 +1,49 @@
-//RECOMENDAÇÃO DE USO! MAIS FÁCIL
+// --- SELEÇÃO COM QUERY SELECTOR (O padrão moderno) ---
+
+// 1. Especificidade total: Buscando o h3 apenas dentro de um ID específico
+// Isso evita pegar o h3 da Lasanha por engano.
+const tituloMacarrao = document.querySelector('#card-macarrao h3');
+
+// 2. Selecionando múltiplos elementos: Todos os botões que têm a classe .btn-pedido
+// Diferente do getElementsByClassName, este retorna uma NodeList (mais moderna que HTMLCollection)
+const botoesCompra = document.querySelectorAll('.bt-pedido');
+
+// 3. Selecionando por atributo (Ex: pegar a imagem pelo 'alt')
+const imgLasanha = document.querySelector('img[alt="Lasanha Tech"]');
+
+// 4. Selecionando o checkbox do menu pelo ID (Sintaxe de CSS #)
+const checkMenu = document.querySelector('#bt_menu');
 
 
-//QUERY SELECTOR
-const tituloNhoque = document.querySelector('#card_nhoque h3') //pega o elemento igual no css, usando # pro id dele
+// --- EXEMPLOS PRÁTICOS PARA MOSTRAR AOS ALUNOS ---
 
-const botoesCompra = document.querySelectorAll(".btn_pedido") //chama vários elementos selectorAll
+console.log("=== TESTES COM QUERY SELECTOR ===");
 
-const terceiroCard = document.querySelector('.card:nth-child(2)') //exatamente como é no css, o pseudoseletor é esse q usa :, NÃO PODE TER ESPAÇO ENTRE AS PALAVRAS E O :
+// 5. Verificando o texto do elemento específico
+if (tituloMacarrao) {
+    console.log("Título capturado:", tituloMacarrao.innerText);
+}
 
-console.log('1. Mostrando o título Nhoque pelo ID', tituloNhoque)
-console.log('2. Quantidade de botões de pedido', botoesCompra.length) //mostrar a quantidade de botões
-console.log('2. Quantidade de botões de pedido', botoesCompra)
+// 6. Manipulando a lista de botões (querySelectorAll)
+// Podemos ver quantos botões existem na página
+console.log("Quantidade de botões de pedido:", botoesCompra.length);
 
-console.log('3. Terceiro card de uma class', terceiroCard)
+// 7. Pegando o primeiro botão da lista e mudando o texto via JS
+if (botoesCompra.length > 0) {
+    botoesCompra[0].textContent = "Comprar Agora!";
+    console.log("Texto do primeiro botão alterado com sucesso.");
+}
 
-const data = new Date()
-const hora = data.getHours()
+// 8. Seleção combinada (Descendente)
+// Pega o preço (span) que está dentro do card de lasanha
+const precoLasanha = document.querySelector('.card .preco');
+console.log("Preço da Lasanha:", precoLasanha.innerText);
 
-const saudacao = document.querySelector('#boas_vindas')
-const seuNome = document.querySelector('#nome')
+// 9. Verificando se o seletor falhou (Segurança para o código)
+const elementoInexistente = document.querySelector('.classe-que-nao-existe');
+console.log("Resultado de seletor inexistente:", elementoInexistente); // Retorna null
 
-saudacao.textContent = hora < 18 && hora > 12 ? 'Bem vindo! boa tarde!' : hora > 18 && hora < 24 ? 'Bem vindo! boa noite!' : 'Bem vindo! Bom dia!'
+tituloMacarrao.style.color = "#e67e22"
 
-seuNome.innerHTML="<strong>Meu nome é Celso</strong>" //TEM QUE SER TUDO ENTRE ASPAS
+card_lasanha.classList.add('.em-promocao')
+
