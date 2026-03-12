@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo TechFood - Grid + Media Query</title>
+    <link rel="stylesheet" href="src/style/style.css">
+</head>
+
+<body>
+
+    <header id="topo-loja">
+        <h1>TechFood - Sabor & Saber</h1>
+
+        <input type="checkbox" id="bt_menu" />
+        <label for="bt_menu" id="label-menu">&#9776;</label>
+
+        <nav id="menu">
+            <ul>
+                <li><a href="#secao-massas">Massas</a></li>
+                <li><a href="#secao-sobremesas">Sobremesas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="secao-massas">
+            <h2 class="titulo-secao">Nossas Massas</h2>
+
+            <div class="vitrine-grid">
+
+                <article class="card">
+                    <img src="src/images/Massa-Lasanha-a-bolonhesa-g.png" alt="Lasanha a bolonhesa">
+
+                    <h3>Lasanha a bolonhesa</h3>
+
+                    <p class="desc">Massa artesanal e molho especial da casa.</p>
+
+                    <span class="preco">R$17,89</span>
+
+                    <button class="bt-pedido">Pedir Agora</button>
+                </article>
+
+                <article class="card">
+                    <img src="src/images/Massa-macarrao-com-molho-branco-g.png" alt="Macarrão ao molho branco com bacon e brócolis">
+
+                    <h3>Macarrão ao molho branco com bacon e brócolis </h3>
+
+                    <p class="desc">Massa artesanal, molho especial da casa, bacon e brócolis frescos.</p>
+
+                    <span class="preco">R$20,49</span>
+
+                    <button class="bt-pedido">Pedir Agora</button>
+                </article>
+
+                <article class="card">
+                    <img src="src/images/Massa-rondelli-g.png" alt="Rondelli de presunto e queijo com molho vermelho">
+
+                    <h3>Rondelli de presunto e queijo</h3>
+
+                    <p class="desc">Massa artesanal, molho especial da casa, presunto e queijo.</p>
+
+                    <span class="preco">R$24,89</span>
+
+                    <button class="bt-pedido">Pedir Agora</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="secao-sobremesas">
+            <h2 class="titulo-secao">Nossas Sobremesas</h2>
+
+            <div class="vitrine-grid">
+
+                <article class="card">
+                    <img src="src/images/Sobremesa-petit-gateu-g.png" alt="petit gâteau com uma bola de sorvete">
+
+                    <h3>petit gâteau com sorvete</h3>
+
+                    <p class="desc">Petit gâteau com uma bola de sorvete de sua preferência.</p>
+
+                    <span class="preco">R$19,89</span>
+
+                    <button class="bt-pedido">Pedir Agora</button>
+                </article>
+
+                <article class="card">
+                    <img src="src/images/Sobremesa-pudim-g.png" alt="Pudim com calda de caramelo">
+
+                    <h3>Pudim de leite condensado</h3>
+
+                    <p class="desc">Pudim de leite condensado e calda caramelizada.</p>
+
+                    <span class="preco">R$20,00</span>
+
+                    <button class="bt-pedido">Pedir Agora</button>
+                </article>
+
+                <article class="card">
+                    <img src="src/images/Sobremesa-bolo-de-limao-g.png" alt="Bolo de limão com cobertura">
+
+                    <h3>Bolo de limão com cobertura</h3>
+
+                    <p class="desc">Pedaço de bolo de limão com cobertura de mousse de limão.</p>
+
+                    <span class="preco">R$30,00</span>
+
+                    <button class="bt-pedido">Pedir Agora</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="rodape">
+        <div class="info-footer">
+            <p><strong>TechFood 2026 &#169;</strong></p>
+            <p>Rua das massas 554, J.Italia - Indaiatuba</p>
+        </div>
+    </footer>
+    <script src="./src/Scripts/aula4.js"></script>
+</body>
+
+</html>
