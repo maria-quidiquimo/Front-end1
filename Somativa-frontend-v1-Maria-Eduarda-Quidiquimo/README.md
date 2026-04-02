@@ -24,4 +24,4 @@ O projeto foi organizado seguindo boas práticas de mercado:
 
 ## 👨‍💻 Autor
 Maria Eduarda Quidiquimo Barreto
-[Seu LinkedIn ou GitHub]
+[Meu GitHub](https://github.com/maria-quidiquimo)
