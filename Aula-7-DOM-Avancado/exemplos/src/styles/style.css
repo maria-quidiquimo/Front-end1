@@ -7,8 +7,8 @@
 }
 
 #topo-loja {
-  background-color: #2c3e50;
-  color: white;
+  background-color: #b10000;
+  color: rgb(255, 244, 244);
   padding: 20px;
   text-align: center;
 }
@@ -29,7 +29,7 @@
 }
 
 #menu a {
-  color: #f1c40f;
+  color: #f5b158;
   text-decoration: none;
   font-weight: bold;
 }
@@ -37,7 +37,7 @@
 .titulo-secao {
   text-align: center;
   margin: 40px 0 20px;
-  color: #2c3e50;
+  color: #a92c2c;
 }
 
 .vitrine-grid {
@@ -121,7 +121,7 @@
 }
 
 #rodape {
-  background: #2c3e50;
+  background: #8d0606;
   color: white;
   padding: 30px;
   text-align: center;
