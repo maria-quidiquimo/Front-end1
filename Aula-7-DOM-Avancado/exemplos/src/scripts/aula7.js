@@ -80,4 +80,15 @@ main.addEventListener("click", (event) => {
     }
 }) // acabou o main ouvinte de click
 
+// 4. As funções de atualizar preço e inserir produto ao resumo
+
+function atualizarPrecoCard(box){
+    const card = box.parentElement
+    const spanPreco = card.querySelector(".preco")
+    const precoUnitario = parseFloat(spanPreco.getAttribute("data-preco"))
+    const quantidade = Number(box.querySelector(".qtd-valor").textContent)
+    const total = precoUnitario * quantidade
+    spanPreco.textContent = "R$" + total.toFixed(2).replace(".", ",")// replace substitui algo que você queira
+    spanPreco.style.color = total > 150 ? "#cc0d0d" : "#ea5d2a"
+}
 
