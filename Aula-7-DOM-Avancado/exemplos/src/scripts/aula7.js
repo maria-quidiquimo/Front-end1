@@ -47,8 +47,37 @@ main.addEventListener("click", (event) => {
         return
     }
 
-// Ação do btn-pedido 
+    // Ação do btn-pedido 
+
+    if (clicado.classList.contains("btn-pedido")){
+        event.preventDefault()
+
+        const card = clicado.parentElement
+        const nomePrato = card.querySelector("h3").textContent
+        const quantidade = card.querySelector(".qtd-valor").textContent
+        const precoExibido = card.querySelector(".preco").textContent
+
+        // Efeito visual quando clicado "Pedir Agora"
+
+        clicado.textContent = "✓ Adicionado"
+        clicado.style.backgroundColor = "#27ae60"
+        clicado.disable = true // o clique fica inativo
+
+        setTimeout(() => {
+            clicado.textContent = "Pedir Agora"
+            clicado.style.backgroundColor = ""
+            clicado.disable = false // deixa o botão desabilibtado
+        }, 1500) // é 1,5 segundos, está em milissegundos
+
+        if(!card.querySelector(".badge-adicionado")){
+            card.insertAdjacentHTML(
+                "beforeend", "<span class='badge-adicionado'> ✓ no resumo </span>"
+            )
+        }
+
+        adicionarItemnAoResumo(nomePrato, quantidade, precoExibido, card)
+
+    }
+}) // acabou o main ouvinte de click
 
 
-
-})
