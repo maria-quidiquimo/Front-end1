@@ -92,3 +92,34 @@ function atualizarPrecoCard(box){
     spanPreco.style.color = total > 150 ? "#cc0d0d" : "#ea5d2a"
 }
 
+function adicionarItemnAoResumo(nome, quantidade, preco, cardOrigem){
+    
+    const secaoResumo = document.querySelector("#secao-resumo")
+    const listaResumo = document.querySelector("#lista-resumo")
+    
+    if(!secaoResumo || !listaResumo) return
+
+    //exibindo a seção resumo
+    secaoResumo.style.display = "block"
+
+    //criando um item na lista 
+    const itemLi = document.createElement("li")
+    itemLi.classList.add("item-resumo")
+    
+    // Informações - TEXTO
+    const textoSpan = document.querySelector("span")
+    textoSpan.textContent = qtd + "x" + nome + "-" + preco
+
+    // Criando botão para remover prato
+    const btnRemover = document.createElement("button")
+    btnRemover.textContent = "✕"
+    btnRemover.classList.add("btn-remover")
+
+
+    // CONTINUAÇÃO ...
+
+    
+
+
+
+}
