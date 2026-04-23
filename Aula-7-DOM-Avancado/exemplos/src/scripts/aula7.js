@@ -66,7 +66,7 @@ main.addEventListener("click", (event) => {
         setTimeout(() => {
             clicado.textContent = "Pedir Agora"
             clicado.style.backgroundColor = ""
-            clicado.disable = false // deixa o botão desabilibtado
+            clicado.disabled = false // deixa o botão desabilibtado
         }, 1500) // é 1,5 segundos, está em milissegundos
 
         if(!card.querySelector(".badge-adicionado")){
@@ -75,7 +75,7 @@ main.addEventListener("click", (event) => {
             )
         }
 
-        adicionarItemnAoResumo(nomePrato, quantidade, precoExibido, card)
+        adicionarItemAoResumo(nomePrato, quantidade, precoExibido, card)
 
     }
 }) // acabou o main ouvinte de click
@@ -92,7 +92,7 @@ function atualizarPrecoCard(box){
     spanPreco.style.color = total > 150 ? "#cc0d0d" : "#ea5d2a"
 }
 
-function adicionarItemnAoResumo(nome, quantidade, preco, cardOrigem){
+function adicionarItemAoResumo(nome, qtd, preco, cardOrigem){
     
     const secaoResumo = document.querySelector("#secao-resumo")
     const listaResumo = document.querySelector("#lista-resumo")
@@ -107,19 +107,51 @@ function adicionarItemnAoResumo(nome, quantidade, preco, cardOrigem){
     itemLi.classList.add("item-resumo")
     
     // Informações - TEXTO
-    const textoSpan = document.querySelector("span")
-    textoSpan.textContent = qtd + "x" + nome + "-" + preco
+    const textoSpan = document.createElement("span")
+    textoSpan.textContent = qtd + "x " + nome + " - " + preco
 
-    // Criando botão para remover prato
+    // Criando botão para remover prato da lista de resumo !!
     const btnRemover = document.createElement("button")
-    btnRemover.textContent = "✕"
+    btnRemover.textContent = "✖️"
     btnRemover.classList.add("btn-remover")
 
+    // Ação de remover o botão, o anterior é a criação dele
+    btnRemover.addEventListener("click", () =>{
+        itemLi.remove()
 
-    // CONTINUAÇÃO ...
+        const badge = cardOrigem.querySelector(".badge-adicionado")
 
-    
+        if(badge) badge.remove() // vai sumir uma caixa, onde não tem mais os pratos dentro dela.
+
+        if(listaResumo.children.length === 0){ //dono da caixa onde tem os pratos, verifica se tem filhos
+            secaoResumo.style.display = "none" // sem nenhum prato adicionado
+        } 
+    }) // fim do RemoverItem
+
+    // é aqui que é inserido realmente na página (parte visual!!)
+    itemLi.appendChild(textoSpan) // textoSpan é o prato e suas informações
+    itemLi.appendChild(btnRemover)
+    listaResumo.appendChild(itemLi)
+} // fim da função AdiconarItemAoResumo
 
 
+const btnLimpar = document.querySelector("#btn-limpar")
 
+if(btnLimpar){ // verifica se botao existe
+    btnLimpar.addEventListener("click", () =>{
+        const listaResumo = document.querySelector("#lista-resumo")
+        const secaoResumo = document.querySelector("#secao-resumo")
+
+        // remove os badge que criamos do js (não tem no html) linha 74
+        document.querySelectorAll(".badge-adicionado").forEach((b) => b.remove()) // remove todos os pratos em alguma posição, se tiver posição com elemento, ele passa e apaga.
+
+        // REMOVER os filhos dessa lista
+        while(listaResumo.firstElementChild){
+            listaResumo.firstElementChild.remove()
+        }
+
+        secaoResumo.style.display = "none" // os códigos anteriores a esse apagam tudo, ou seja, apaga as informações, e esse apaga só o visual.
+
+
+    })
 }
