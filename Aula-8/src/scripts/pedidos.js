@@ -1,46 +1,81 @@
+document.addEventListener("DOMContentLoaded", function(){
+    renderizarPedidos()
+    //continua...
+})
 
 
 
-
-
-function adicionarItemAoResumo(nome, qtd, preco, cardOrigem){
+function renderizarPedidos(){
     
-    const secaoResumo = document.querySelector("#secao-resumo")
-    const listaResumo = document.querySelector("#lista-resumo")
+    const lista = document.querySelector("#lista-pedidos")
+    const spanTotal = document.querySelector("#valor-total")
+    const spanResumo = document.querySelector("#valor-total-resumo")
+    const spanContador = document.querySelector("#contador-itens")
     
-    if(!secaoResumo || !listaResumo) return
+    if(!lista) return
 
-    //exibindo a seção resumo
-    secaoResumo.style.display = "block"
+    // requisição
+    const pedidos = JSON.parse(localStorage.getItem("techfood_pedidos") || "[]")
 
-    //criando um item na lista 
-    const itemLi = document.createElement("li")
-    itemLi.classList.add("item-resumo")
-    
+    if(pedidos.length === 0){
+        lista.innerHTML = "<li class='pedido-vazio'> Nenhum pedido ainda. Acesse o" + "<a href='index.html'> Cardápio </a> Para adicionar! 😊 </li>"
+
+        // esvaziando os spans
+        if(spanTotal) spanTotal.textContent = "R$ 0,00"
+        if(spanResumo) spanResumo.textContent = "R$ 0,00"
+        if(spanContador) spanContador.textContent = "0 itens"
+    }
+
+    lista.innerHTML = ""
+    let total = 0
+
+    pedidos.forEach(function(pedido, indice){
+        
+        const li = document.createElement("li")
+        li.classList.add("item-pedido")
+
+        
     // Informações - TEXTO
     const textoSpan = document.createElement("span")
-    textoSpan.textContent = qtd + "x " + nome + " - " + preco
+    textoSpan.innerHTML = "<strong>" + pedido.nome + "</strong>" + "-" + pedido.qtd + "x" + " R$ " + pedido.preco.toFixed(2).replace(".", ",") + "= <span class='subtotal-item'> R$" + pedido.subtotal.toFixed(2).replace(".", ",")
+
+
+    
+    
 
     // Criando botão para remover prato da lista de resumo !!
     const btnRemover = document.createElement("button")
-    btnRemover.textContent = "✖️"
+    btnRemover.textContent = "❌"
     btnRemover.classList.add("btn-remover")
 
     // Ação de remover o botão, o anterior é a criação dele
     btnRemover.addEventListener("click", () =>{
-        itemLi.remove()
+        const lista = JSON.parse(localStorage.getItem("techfood_pedidos") || " [] ")
+        lista.splice(indice, 1)
 
-        const badge = cardOrigem.querySelector(".badge-adicionado")
+        localStorage.setItem("techfood_pedidos")
 
-        if(badge) badge.remove() // vai sumir uma caixa, onde não tem mais os pratos dentro dela.
+        renderizarPedidos()
 
-        if(listaResumo.children.length === 0){ //dono da caixa onde tem os pratos, verifica se tem filhos
-            secaoResumo.style.display = "none" // sem nenhum prato adicionado
-        } 
     }) // fim do RemoverItem
 
-    // é aqui que é inserido realmente na página (parte visual!!)
     itemLi.appendChild(textoSpan) // textoSpan é o prato e suas informações
     itemLi.appendChild(btnRemover)
     listaResumo.appendChild(itemLi)
+    total += pedido.subtotal
+
+    const totalFmt = "R$" + total.toFixed(2).replace(".", ",")
+
+})// fim pedido.forEach
 } // fim da função AdiconarItemAoResumo
+
+function configurarLimparPedidos(){
+    const btnLimpar = document.querySelector("#btn-limpar-pedidos")
+
+    if(!btnLimpar) return
+
+    btnLimpar.addEventListener("click", function(){
+        localStorage.removeItem("techfood_pedidos")
+        renderizarPedidos()
+    })
+}

@@ -51,8 +51,8 @@ function inicializarVitrine(){
 
         const card = clicado.parentElement
         const nomePrato = card.querySelector("h3").textContent
-        const quantidade = card.querySelector(".qtd-valor").textContent
-        const preco = card.querySelector(".preco").textContent
+        const quantidade = Number(card.querySelector(".qtd-valor").textContent)
+        const preco = parseFloat(card.querySelector(".preco").getAttribute("data-preco"))
 
         // Efeito visual quando clicado "Pedir Agora"
 
