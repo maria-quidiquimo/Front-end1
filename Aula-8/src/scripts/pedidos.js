@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(){
     renderizarPedidos()
-    //continua...
+    configurarLimparPedidos()
+    
+    //continua
 })
-
 
 
 function renderizarPedidos(){

@@ -16,18 +16,20 @@
 
 /* ── VARIÁVEIS DE COR ───────────────────────────────────── */
 :root {
-  --cor-primaria: #2c3e50;
-  --cor-destaque: #e67e22;
-  --cor-amarelo: #f1c40f;
-  --cor-verde: #27ae60;
-  --cor-vermelho: #e74c3c;
+  --cor-primaria: #4b1d63;
+  --cor-destaque: #d24fa8;
+  --cor-secundaria: #9259c2;
+  --cor-rosa-claro: #f6e1f8;
+  --cor-texto: #2b1741;
+  --cor-branco: #ffffff;
+  --cor-fundo: #fdf4fb;
 }
 
 /* ── HEADER ─────────────────────────────────────────────── */
 #topo-loja {
   background-color: var(--cor-primaria);
-  color: #fff;
-  padding: 20px;
+  color: var(--cor-branco);
+  padding: 24px 20px;
   text-align: center;
   position: relative;
 }
@@ -76,7 +78,7 @@
 
 #menu a:hover,
 #menu a.ativo {
-  color: var(--cor-amarelo);
+  color: var(--cor-destaque);
   opacity: 1;
 }
 
@@ -115,7 +117,7 @@ a.menu-ativo {
 /* ── FOOTER ─────────────────────────────────────────────── */
 #rodape {
   background: var(--cor-primaria);
-  color: #fff;
+  color: var(--cor-branco);
   padding: 30px;
   text-align: center;
   margin-top: 40px;
