@@ -40,9 +40,6 @@ function renderizarPedidos(){
     textoSpan.innerHTML = "<strong>" + pedido.nome + "</strong>" + "-" + pedido.qtd + "x" + " R$ " + pedido.preco.toFixed(2).replace(".", ",") + "= <span class='subtotal-item'> R$" + pedido.subtotal.toFixed(2).replace(".", ",")
 
 
-    
-    
-
     // Criando botão para remover prato da lista de resumo !!
     const btnRemover = document.createElement("button")
     btnRemover.textContent = "❌"
@@ -64,9 +61,21 @@ function renderizarPedidos(){
     listaResumo.appendChild(itemLi)
     total += pedido.subtotal
 
-    const totalFmt = "R$" + total.toFixed(2).replace(".", ",")
-
 })// fim pedido.forEach
+
+    const totalFmt = "R$" + total.toFixed(2).replace(".", ",")
+    if(spanTotal) spanTotal.textContent = totalFmt
+    if(spanResumo) spanResumo.textContent = totalFmt
+
+    // está contando quantos itens tem no carrinho
+    const totalItens = pedidos.reduce(function(acc, p){
+        return acc + p.qtd
+    }, 0)
+
+    if(spanContador){
+        spanContador.textContent = totalItens + (totalItens === 1 ? "item" : "itens")
+    }
+
 } // fim da função AdiconarItemAoResumo
 
 function configurarLimparPedidos(){
