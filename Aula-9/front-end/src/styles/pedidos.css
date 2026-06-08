@@ -26,7 +26,7 @@
 
 #resumo-pedidos #valor-total-resumo {
   font-weight: bold;
-  color: #e67e22;
+  color: #e622cc;
   font-size: 1rem;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .subtotal-item {
-  color: #e67e22;
+  color: #e622cf;
   font-weight: bold;
 }
 
@@ -93,7 +93,7 @@
 }
 
 .pedido-vazio a {
-  color: #e67e22;
+  color: #e622d9;
   text-decoration: none;
   font-weight: bold;
 }
@@ -114,11 +114,11 @@
 
 #total-pedidos strong {
   font-size: 1.1rem;
-  color: #2c3e50;
+  color: #502c4b;
 }
 
 #valor-total {
-  color: #e67e22;
+  color: #e622e6;
   font-size: 1.2rem;
 }
 
@@ -153,7 +153,7 @@
 }
 
 .btn-voltar-cardapio {
-  background: #2c3e50;
+  background: #502c40;
   color: #fff;
   padding: 8px 16px;
   border-radius: 6px;
@@ -164,7 +164,7 @@
 }
 
 .btn-voltar-cardapio:hover {
-  background: #34495e;
+  background: #5e3456;
 }
 
 /* ── Responsivo ──────────────────────────────────────────── */
@@ -191,7 +191,7 @@
    Destaque em verde para diferenciar dos outros botões.
    ─────────────────────────────────────────────────────────── */
 .btn-enviar-cozinha {
-  background: #27ae60;
+  background: #ae278e;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -203,7 +203,7 @@
 }
 
 .btn-enviar-cozinha:hover {
-  background: #219150;
+  background: #912179;
 }
 
 .btn-enviar-cozinha:disabled {
@@ -232,10 +232,10 @@
   font-size: 0.95rem;
 }
 
-.pedido-info strong { color: #2c3e50; }
+.pedido-info strong { color: #502c46; }
 
 .pedido-total {
-  color: #e67e22;
+  color: #e622a8;
   font-weight: bold;
 }
 
@@ -258,24 +258,24 @@
   letter-spacing: 0.5px;
 }
 
-.badge-pendente { background: #fff3cd; color: #856404; }
-.badge-preparo  { background: #ffe0b2; color: #e65100; }
-.badge-pronto   { background: #d4edda; color: #155724; }
+.badge-pendente { background: #fff3cd; color: #850454; }
+.badge-preparo  { background: #ffe0b2; color: #e600c7; }
+.badge-pronto   { background: #d4edda; color: #571550; }
 .badge-entregue { background: #e2e3e5; color: #555;    }
 
 /* ── Borda lateral colorida por status ───────────────────────
    Aplicada ao <li> pelo pedidos.js via classList.add("status-X").
    ─────────────────────────────────────────────────────────── */
-.status-pendente { border-left: 4px solid #f9a825; }
-.status-preparo  { border-left: 4px solid #e67e22; }
-.status-pronto   { border-left: 4px solid #27ae60; }
+.status-pendente { border-left: 4px solid #f925d6; }
+.status-preparo  { border-left: 4px solid #e622bf; }
+.status-pronto   { border-left: 4px solid #ae2795; }
 .status-entregue { border-left: 4px solid #bbb; opacity: 0.7; }
 
 /* ── Botão de avançar status ─────────────────────────────────
    Criado por gerarBotaoStatus() com onclick inline.
    ─────────────────────────────────────────────────────────── */
 .btn-status {
-  background: #2c3e50;
+  background: #502c4a;
   color: #fff;
   border: none;
   padding: 5px 12px;
@@ -285,7 +285,7 @@
   transition: background 0.15s;
 }
 
-.btn-status:hover { background: #34495e; }
+.btn-status:hover { background: #5c345e; }
 
 .entregue-label {
   font-size: 0.78rem;
@@ -310,7 +310,7 @@
 
 #resumo-pedidos #valor-total-resumo {
   font-weight: bold;
-  color: #e67e22;
+  color: #e622cc;
 }
 
 /* ── Painel "Conta da Mesa" — Aula 9 ────────────────────────

@@ -7,7 +7,7 @@
 }
 
 #topo-loja {
-  background-color: #2c3e50;
+  background-color: #502c4a;
   color: white;
   padding: 20px;
   text-align: center;
@@ -29,7 +29,7 @@
 }
 
 #menu a {
-  color: #f1c40f;
+  color: #f10fb1;
   text-decoration: none;
   font-weight: bold;
 }
@@ -37,7 +37,7 @@
 .titulo-secao {
   text-align: center;
   margin: 40px 0 20px;
-  color: #2c3e50;
+  color: #502c41;
 }
 
 .vitrine-grid {
@@ -66,12 +66,12 @@
   display: block;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #e67e22;
+  color: #e622cc;
   margin: 15px 0;
 }
 
 .btn-pedido {
-  background-color: #e67e22;
+  background-color: #e622ab;
   color: white;
   border: none;
   padding: 12px;
@@ -95,9 +95,9 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 2px solid #e67e22;
+  border: 2px solid #e622cc;
   background: none;
-  color: #e67e22;
+  color: #e622cc;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
@@ -108,20 +108,20 @@
 }
 
 .btn-qtd:hover {
-  background: #e67e22;
+  background: #e622cc;
   color: #fff;
 }
 
 .qtd-valor {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #2c3e50;
+  color: #502c41;
   min-width: 24px;
   text-align: center;
 }
 
 #rodape {
-  background: #2c3e50;
+  background: #502c41;
   color: white;
   padding: 30px;
   text-align: center;
@@ -137,7 +137,7 @@
   display: inline-block;
   margin-top: 8px;
   padding: 3px 10px;
-  background-color: #27ae60;
+  background-color: #27ae52;
   color: #fff;
   font-size: 0.75rem;
   border-radius: 20px;
@@ -151,7 +151,7 @@
   margin: 20px auto 40px;
   padding: 25px;
   background: #fff;
-  border: 2px solid #e67e22;
+  border: 2px solid #e622cc;
   border-radius: 12px;
 }
 
@@ -170,7 +170,7 @@
   padding: 10px 5px;
   border-bottom: 1px solid #f0f0f0;
   font-size: 0.95rem;
-  color: #333;
+  color: #333333;
   /* Animação suave de entrada — o item "desce" ao aparecer */
   animation: entrar 0.2s ease;
 }
