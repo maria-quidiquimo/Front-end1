@@ -9,7 +9,7 @@
 <body>
 
   <header id="topo">
-    <h1>🎮 Lista de Jogos do(a) ALUNO</h1>
+    <h1>🎮 Lista de Jogos da Maria Eduarda </h1>
     <p>Cadastre os jogos que você já jogou e dê sua nota.</p>
   </header>
 
@@ -32,6 +32,8 @@
              (label + input). Veja a prova para detalhes.
         -->
 
+        <label for="plataforma" id="input-plataforma">Plataforma</label>
+        <input type="text" id="input-plataforma" required/>
 
         <label for="input-comentario">Comentário</label>
         <textarea id="input-comentario" rows="3" required></textarea>
@@ -47,6 +49,7 @@
         ⚠ FUNCIONALIDADE 2 — Adicionar AQUI um parágrafo <p>
            com id="contador" para mostrar quantos jogos existem.
       -->
+      <p id="contador"></p>
 
 
       <ul id="lista-jogos"></ul>
@@ -57,6 +60,8 @@
            que apaga todos os jogos (com confirmação).
            Use id="btn-limpar".
       -->
+
+      <button class="btn-limpar"> Limpar Tudo </button>
 
 
     </section>

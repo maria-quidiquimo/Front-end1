@@ -5,7 +5,7 @@
    ============================================================ */
 
 
-const CHAVE_STORAGE = "meus_jogos";
+//const CHAVE_STORAGE = "meus_jogos";
 
 
 /* ============================================================
@@ -14,6 +14,7 @@ const CHAVE_STORAGE = "meus_jogos";
 document.addEventListener("DOMContentLoaded", function () {
   configurarFormulario();
   renderizarJogos();
+  salvarJogo();
 });
 
 
@@ -30,6 +31,7 @@ function configurarFormulario() {
       titulo:     document.querySelector("#input-titulo").value,
       produtora:  document.querySelector("#input-produtora").value,
       nota:       Number(document.querySelector("#input-nota").value),
+      plataforma: document.querySelector("#input-plataforma").value,
       comentario: document.querySelector("#input-comentario").value,
     };
 
@@ -42,14 +44,17 @@ function configurarFormulario() {
 
 /* ============================================================
    3) SALVAR JOGO NO LOCALSTORAGE
+   // 🐛 ATENÇÃO: tem um bug aqui que faz os jogos "sumirem" ao recarregar.
+  //    Teste cadastrando um jogo e atualizando a página (F5).
    ============================================================ */
 function salvarJogo(jogo) {
-  const lista = JSON.parse(localStorage.getItem(CHAVE_STORAGE)) || [];
+  const lista = JSON.parse(localStorage.getItem("meus_jogos")) || " [] ";
   lista.push(jogo);
 
-  // 🐛 ATENÇÃO: tem um bug aqui que faz os jogos "sumirem" ao recarregar.
-  //    Teste cadastrando um jogo e atualizando a página (F5).
-  localStorage.setItem(CHAVE_STORAGE, lista);
+  localStorage.setItem("meus_jogos", JSON.stringify(lista));
+
+  lista.splice(indice, 1)
+  localStorage.setItem("meus_jogos", JSON.stringify(lista));
 }
 
 
@@ -57,7 +62,7 @@ function salvarJogo(jogo) {
    4) MOSTRAR OS JOGOS NA TELA
    ============================================================ */
 function renderizarJogos() {
-  const lista = JSON.parse(localStorage.getItem(CHAVE_STORAGE)) || [];
+  const lista = JSON.parse(localStorage.getItem("meus_jogos")) || [];
   const ul = document.querySelector("#lista-jogos");
   const msgVazio = document.querySelector("#msg-vazio");
 
@@ -74,6 +79,7 @@ function renderizarJogos() {
     li.innerHTML = `
       <strong>${jogo.titulo}</strong>
       <div class="meta">Produtora: ${jogo.produtora} • Nota: ${jogo.nota}/5</div>
+      <div class= "plataforma"> Plataforma: ${jogo.plataforma}</div>
       <div class="comentario">"${jogo.comentario}"</div>
       <button class="btn-excluir" data-index="${indice}">Excluir</button>
     `;
@@ -84,12 +90,13 @@ function renderizarJogos() {
 
 /* ============================================================
    5) DELEGAÇÃO DE EVENTOS — BOTÃO EXCLUIR
+     // 🐛 ATENÇÃO: tem um bug aqui. O botão Excluir não funciona.
+    //    Olhe com atenção como o botão é criado no innerHTML acima (função 4).
    ============================================================ */
 document.querySelector("#lista-jogos").addEventListener("click", function (event) {
 
-  // 🐛 ATENÇÃO: tem um bug aqui. O botão Excluir não funciona.
-  //    Olhe com atenção como o botão é criado no innerHTML acima (função 4).
-  if (event.target.id === "btn-excluir") {
+
+  if (event.target.id === "btn-limpar") {
     const indice = event.target.getAttribute("data-index");
     excluirJogo(indice);
   }
@@ -100,8 +107,8 @@ document.querySelector("#lista-jogos").addEventListener("click", function (event
    6) EXCLUIR JOGO
    ============================================================ */
 function excluirJogo(indice) {
-  const lista = JSON.parse(localStorage.getItem(CHAVE_STORAGE)) || [];
+  const lista = JSON.parse(localStorage.getItem("meus_jogos")) || [];
   lista.splice(indice, 1);
-  localStorage.setItem(CHAVE_STORAGE, JSON.stringify(lista));
+  localStorage.setItem("meus_jogos", JSON.stringify(lista));
   renderizarJogos();
 }
