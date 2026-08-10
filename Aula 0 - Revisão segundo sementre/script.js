@@ -23,7 +23,8 @@ const cardapio = [
     new Prato("Moqueca de Peixe", 58.00, "Prato Principal"),
     new Prato("Coxinha Artesanal", 8.50, "Petisco"),
     new Prato("Brigadeiro Gourmet", 6.00, "Sobremesa"),
-    new Prato("Suco de Maracujá", 12.00, "Bebidas"),
+    new Prato("Torta de Maracujá com chocolate", 12.00, "Sobremesa"),
+    new Prato("Cheese Cake", 12.00, "Sobremesa")
 ]
 
 console.log("=== Pratos Criados ===")
@@ -41,7 +42,8 @@ function criarCardPrato(prato){
 
     card.innerHTML = `
      <h3>${prato.nome}</h3>
-     <span class="categoria"></span>
+     <span class="categoria">${prato.categoria}</span>
+     <div class="info">Prato • ${prato.categoria}</div>
      <div class="preco">${prato.formatarPreco()}</div>
     `
 
@@ -105,8 +107,9 @@ const listaBebidas = [
     new Bebida("Coca-Cola", 10.00, 600, "Refrigerante"),
     new Bebida("Suco Del Valle", 6.00, 300, "Suco"),
     new Bebida("Água Mineral", 4.50, 520, "Água"),
-    new Bebida("Soda Italiana", 12.00, 500, "Refresco"),
-    new Bebida("Guaraná Antartica", 8.00, 320, "Refrigerante")
+    new Bebida("Soda Italiana", 14.00, 500, "Refresco"),
+    new Bebida("Guaraná Antartica", 8.00, 320, "Refrigerante"),
+    new Bebida("Suco de Maracujá", 12.00,500, "Suco"),
 ];
 
 console.log("=== Bebidas Criadas ===");
