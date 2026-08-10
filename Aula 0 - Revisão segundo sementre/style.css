@@ -80,6 +80,22 @@ main {
   margin-top: 8px;
 }
 
+.card .info {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.cardapio-section {
+  margin-top: 24px;
+}
+
+.cardapio-section h2 {
+  margin-bottom: 12px;
+  color: #C1272D;
+}
+
 footer {
   text-align: center;
   padding: 16px;

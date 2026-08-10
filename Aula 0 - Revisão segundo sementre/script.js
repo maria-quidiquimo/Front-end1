@@ -75,50 +75,80 @@ renderizarCardapio() // vai ter q renderizar de novo depois de um modificação 
 
 // CLASSE BEBIDAS
 
-class Bebida{
-    constructor(nome, preco, volume){
+class Bebida {
+    constructor(nome, preco, volume, categoria = "Bebida") {
         this.nome = nome;
         this.preco = preco;
-        this.volume = volume
+        this.volume = volume;
+        this.categoria = categoria;
     }
-    descricao(){
-        return `${this.nome} - ${this.volume} - R$ ${this.preco.toFixed(2)}`
+
+    formatarPreco() {
+        return `R$ ${this.preco.toFixed(2).replace(".", ",")}`;
     }
-    emLitros(){
+
+    descricao() {
+        return `${this.nome} · ${this.volume}ml`;
+    }
+
+    emLitros() {
         const litros = this.volume / 1000;
         return `${litros.toFixed(2)}L`;
     }
+
+    aplicarDesconto(percentual) {
+        this.preco = this.preco * (1 - percentual / 100);
+    }
 }
 
-const coca = new Bebida ("Coca-cola", 10.00, 600);
-const suco = new Bebida ("Suco DelValle", 6.00, 300);
-const agua = new Bebida ("Água Mineral com ou sem gás", 4.50, 520);
+const listaBebidas = [
+    new Bebida("Coca-Cola", 10.00, 600, "Refrigerante"),
+    new Bebida("Suco Del Valle", 6.00, 300, "Suco"),
+    new Bebida("Água Mineral", 4.50, 520, "Água")
+];
 
-console.log("=== Bebidas (descrição) ===");
-console.log(coca.descricao());
-console.log(suco.descricao());
-console.log(agua.descricao());
+console.log("=== Bebidas Criadas ===");
+listaBebidas.forEach(bebida => {
+    console.log(`${bebida.nome} -> ${bebida.formatarPreco()}`);
+});
 
-console.log("=== Bebida (em Litros) ===")
-console.log(`${coca.nome} -> ${coca.emLitros()} - ${coca.preco}`)
-console.log(`${suco.nome} -> ${suco.emLitros()} - ${suco.preco}`)
-console.log(`${agua.nome} -> ${agua.emLitros()} - ${agua.preco}`)
-
-const listaBebidas = [coca, suco, agua]
-
-const container = document.querySelector("#listaBebidas");
+const containerBebidas = document.querySelector("#listaBebidas");
 
 function criarCardBebida(bebida) {
-  const card = document.createElement('div');
-  card.className = 'card';
+    const card = document.createElement("div");
+    card.className = "card";
 
-  card.innerHTML = `
-    <h3>${bebida.nome}</h3>
-    <div class="info">${bebida.descricao()}</div>
-  `;
+    card.innerHTML = `
+        <h3>${bebida.nome}</h3>
+        <span class="categoria">${bebida.categoria}</span>
+        <div class="info">${bebida.descricao()} · ${bebida.emLitros()}</div>
+        <div class="preco">${bebida.formatarPreco()}</div>
+    `;
+
+    card.addEventListener("click", () => {
+        alert(
+            `🥤 ${bebida.nome}\n\n` +
+            `Categoria: ${bebida.categoria}\n` +
+            `Volume: ${bebida.emLitros()}\n` +
+            `Preço: ${bebida.formatarPreco()}`
+        );
+    });
+
+    return card;
 }
-card.addEventListener('click', () => {
-    alert(`🥤 ${bebida.nome}\nVolume em litros: ${bebida.emLitros()}`);
-  });
 
-return card;
+function renderizarBebidas() {
+    if (!containerBebidas) return;
+
+    containerBebidas.innerHTML = "";
+
+    listaBebidas.forEach(bebida => {
+        const card = criarCardBebida(bebida);
+        containerBebidas.appendChild(card);
+    });
+}
+
+renderizarBebidas();
+
+listaBebidas[0].aplicarDesconto(10);
+renderizarBebidas();
