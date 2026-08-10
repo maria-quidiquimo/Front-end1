@@ -104,7 +104,9 @@ class Bebida {
 const listaBebidas = [
     new Bebida("Coca-Cola", 10.00, 600, "Refrigerante"),
     new Bebida("Suco Del Valle", 6.00, 300, "Suco"),
-    new Bebida("Água Mineral", 4.50, 520, "Água")
+    new Bebida("Água Mineral", 4.50, 520, "Água"),
+    new Bebida("Soda Italiana", 12.00, 500, "Refresco"),
+    new Bebida("Guaraná Antartica", 8.00, 320, "Refrigerante")
 ];
 
 console.log("=== Bebidas Criadas ===");
