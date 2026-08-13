@@ -43,7 +43,6 @@ function criarCardPrato(prato){
     card.innerHTML = `
      <h3>${prato.nome}</h3>
      <span class="categoria">${prato.categoria}</span>
-     <div class="info">Prato • ${prato.categoria}</div>
      <div class="preco">${prato.formatarPreco()}</div>
     `
 

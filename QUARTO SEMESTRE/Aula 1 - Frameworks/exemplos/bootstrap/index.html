@@ -24,9 +24,11 @@
     Adicione as classes Bootstrap no header:
     bg-danger  text-white  text-center  py-4  mb-4
   -->
-  <header>
-    <h1>Sabor &amp; Saber</h1>
-    <p>Cardápio digital</p>
+  <!-- bg significa background  danger significa cor vermelha, py é padding que é o espaçamento entre o conteudo e os cantos e o y é o eixo que vai ser aplicado o padding o numero é o espaçamento, fw é a fonte weight espeçura da fonte. mb é margin -->
+
+  <header class="bg-danger text-white text-center py-4"> 
+    <h1 class="fw-bold">Sabor &amp; Saber</h1>
+    <p class="mb-0 fs-5">Cardápio digital</p>
   </header>
 
   <!--
@@ -38,19 +40,19 @@
         </div>
       </main>
   -->
-  <main>
-    <h2>Nosso Cardápio</h2>
+  <main class="container ">
+    <h2 class="text-center mb-4">Nosso Cardápio</h2>
 
     <!--
       O JS vai inserir os cards aqui.
       Quando aplicar o grid, a section vira a row
       e cada article (criado pelo JS) recebe as classes col.
     -->
-    <section id="cardapio">
+    <section id="cardapio" class="row g-3">
     </section>
   </main>
 
-  <footer>
+  <footer class="text-center text-muted py-4 mt-5">
     <small>TechFood · Aula 1 Bootstrap · Prof. Marlon</small>
   </footer>
 
