@@ -1,0 +1,5 @@
+O que mudou e o que ficou igual?
+
+o uso de classes é sempre a mesma coisa e as tags de configuração de cabeçalho também ficam iguais. O que muda agora é a infraestrutura, em questões disso o tailwind é maior por causa de 
+sua instalação necessária dentro da pasta e pro seu processamento é necessário rodar um código no terminal. Algumas classes também mudam de nome por exemplo o de cores, enquanto o bootstrap
+usa nomenclaturas que são consideradas padrões, por exemplo bg-danger = vermelho, o tailwind deixa a gente escolher a cor e até seu tom, por exemplo bg-red-600. 
