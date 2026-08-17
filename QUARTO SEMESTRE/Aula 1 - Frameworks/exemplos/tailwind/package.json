@@ -7,9 +7,7 @@
     "build": "tailwindcss -i input.css -o output.css --minify"
   },
   "devDependencies": {
+    "tailwind": "^3.1.0",
     "tailwindcss": "^3.0.0"
-  },
-  "dependencies": {
-    "tailwind": "^2.3.1"
   }
 }
