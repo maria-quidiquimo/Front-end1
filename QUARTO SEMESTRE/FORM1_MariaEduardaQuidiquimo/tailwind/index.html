@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechFood — Sabor & Saber (Tailwind)</title>
-
+  <title>Restaurante da Quindim (Tailwind)</title>
+  
   <link rel="stylesheet" href="output.css">
-
 </head>
+<body class="bg-gray-100"> 
 
-<header class="bg-red-600 text-white text-center py-4 mb-4">
+  <header class="bg-red-600 text-white text-center py-4 mb-4">
     <h1 class="font-bold text-3xl">Restaurante da Quindim</h1>
     <p class="text-lg">Cardápio digital</p>
   </header>
 
-  <main class="container my-5">
-        <div class="row g-4" id="food-container">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div clas="bg-white p-4 rounded-lg shadow-sm text-center h-100" id="Feijoada">
-                    <h3 class="fw-bold mb-3 text-red-600">Feijoada Completa</h3>
-                    <p class="text-gray-400 m-0">Feijoada completa acompanhada por uma coquinha gelada, por apenas R$ 48,90. Aproveite!</p>
-                </div>
-            </div>
+  <main class="container mx-auto my-10 px-4">
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div clas="bg-white p-4 rounded-lg shadow-sm text-center h-100" id="coxinha">
-                    <h3 class="fw-bold mb-3 text-red-600">Coxinha de Frango</h3>
-                    <p class="text-gray-400 m-0">Crocante e com bastante catupiry. Por apenas R$ 6,50</p>
-                </div>
-            </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="food-container">
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div clas="bg-white p-4 rounded-lg shadow-sm text-center h-100" id="brigadeiro">
-                    <h3 class="fw-bold mb-3 text-red-600">Brigadeiro</h3>
-                    <p class="text-gray-400 m-0">Brigadeiro gourmet e se quiser vem bolacha maizena de acompanhamento, por apenas R$ 8,00. Aproveite!</p>
-                </div>
-            </div>
-        </div>
-    </main>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center" id="Feijoada">
+        <h3 class="font-bold text-xl mb-3 text-red-600">Feijoada Completa</h3>
+        <p class="text-gray-600">Feijoada completa acompanhada por uma coquinha gelada, por apenas R$ 48,90. Aproveite!</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md text-center" id="coxinha">
+        <h3 class="font-bold text-xl mb-3 text-red-600">Coxinha de Frango</h3>
+        <p class="text-gray-600">Crocante e com bastante catupiry. Por apenas R$ 6,50</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-md text-center" id="brigadeiro">
+        <h3 class="font-bold text-xl mb-3 text-red-600">Brigadeiro</h3>
+        <p class="text-gray-600">Brigadeiro gourmet e se quiser vem bolacha maizena de acompanhamento, por apenas R$ 8,00. Aproveite!</p>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
