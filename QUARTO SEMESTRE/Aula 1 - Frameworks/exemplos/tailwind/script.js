@@ -42,9 +42,9 @@ function criarCardPrato(prato){
 
 
     card.innerHTML = `
-     <h3>${prato.nome}</h3>
-     <span class="categoria">${prato.categoria}</span>
-     <div class="preco">${prato.formatarPreco()}</div>
+     <h3 class="text-xl font-bold text-gray-800 mb-2">${prato.nome}</h3>
+     <span class="text-sm text-gray-500 block mb-3 categoria">${prato.categoria}</span>
+     <div class="text-lg font-bold text-green-500">${prato.formatarPreco()}</div>
     `
 
     card.addEventListener('click', () =>{
