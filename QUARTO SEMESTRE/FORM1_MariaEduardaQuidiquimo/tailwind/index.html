@@ -8,33 +8,35 @@
   <link rel="stylesheet" href="output.css">
 
 </head>
-
-<header class="bg-red-600 text-white text-center py-4 mb-4">
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-red-600 text-white text-center py-4 mb-4">
     <h1 class="font-bold text-3xl">Restaurante da Quindim</h1>
     <p class="text-lg">Cardápio digital</p>
   </header>
 
   <main class="container my-5">
-        <div class="row g-4" id="food-container">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div clas="bg-white p-4 rounded-lg shadow-sm text-center h-100" id="Feijoada">
-                    <h3 class="fw-bold mb-3 text-red-600">Feijoada Completa</h3>
-                    <p class="text-gray-400 m-0">Feijoada completa acompanhada por uma coquinha gelada, por apenas R$ 48,90. Aproveite!</p>
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3" id="food-container">
+            <div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center h-full" id="Feijoada">
+                    <h3 class="font-bold mb-3 text-red-600">Feijoada Completa</h3>
+                    <p class="text-gray-600 m-0">Feijoada completa acompanhada por uma coquinha gelada, por apenas R$ 48,90. Aproveite!</p>
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div clas="bg-white p-4 rounded-lg shadow-sm text-center h-100" id="coxinha">
-                    <h3 class="fw-bold mb-3 text-red-600">Coxinha de Frango</h3>
-                    <p class="text-gray-400 m-0">Crocante e com bastante catupiry. Por apenas R$ 6,50</p>
+            <div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center h-full" id="coxinha">
+                    <h3 class="font-bold mb-3 text-red-600">Coxinha de Frango</h3>
+                    <p class="text-gray-600 m-0">Crocante e com bastante catupiry. Por apenas R$ 6,50</p>
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <div clas="bg-white p-4 rounded-lg shadow-sm text-center h-100" id="brigadeiro">
-                    <h3 class="fw-bold mb-3 text-red-600">Brigadeiro</h3>
-                    <p class="text-gray-400 m-0">Brigadeiro gourmet e se quiser vem bolacha maizena de acompanhamento, por apenas R$ 8,00. Aproveite!</p>
+            <div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center h-full" id="brigadeiro">
+                    <h3 class="font-bold mb-3 text-red-600">Brigadeiro</h3>
+                    <p class="text-gray-600 m-0">Brigadeiro gourmet e se quiser vem bolacha maizena de acompanhamento, por apenas R$ 8,00. Aproveite!</p>
                 </div>
             </div>
         </div>
     </main>
+</body>
+</html>
