@@ -37,7 +37,7 @@ function criarCardPrato(prato) {
   /*
     LIVE CODE — PASSO 2:
     Trocar o innerHTML abaixo pelo componente Bootstrap:
-
+*/
     card.innerHTML = `
       <div class="card-body">
         <h5 class="card-title fw-bold">${prato.nome}</h5>
@@ -56,14 +56,14 @@ function criarCardPrato(prato) {
         </button>
       </div>
     `;
-  */
-  card.innerHTML = `
-    <div class="p-4">
-      <h3>${prato.nome}</h3>
-      <span>${prato.categoria}</span>
-      <div>${prato.formatarPreco()}</div>
-    </div>
-  `;
+  
+  // card.innerHTML = `
+  //   <div class="p-4">
+  //     <h3>${prato.nome}</h3>
+  //     <span>${prato.categoria}</span>
+  //     <div>${prato.formatarPreco()}</div>
+  //   </div>
+  // `;
 
   col.appendChild(card);
   return col;
@@ -81,6 +81,7 @@ renderizarCardapio();
 /*
   LIVE CODE — PASSO 4 (Modal):
   Depois de adicionar o modal no HTML, conectar os botões:
+*/
 
   document.addEventListener('show.bs.modal', (event) => {
     const btn    = event.relatedTarget;
@@ -94,4 +95,3 @@ renderizarCardapio();
     document.getElementById('modalPreco').textContent     = preco;
     document.getElementById('modalDescricao').textContent = desc;
   });
-*/

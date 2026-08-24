@@ -14,7 +14,8 @@
   <!--
     LIVE CODE — PASSO 1: NAVBAR
     Troque este <header> por um componente <nav class="navbar ...">
-    Estrutura:
+    Estrutura:-->
+
       <nav class="navbar navbar-expand-lg bg-danger navbar-dark">
         <div class="container">
           <a class="navbar-brand fw-bold" href="#">Sabor & Saber</a>
@@ -29,10 +30,7 @@
           </div>
         </div>
       </nav>
-  -->
-  <header class="bg-danger text-white text-center py-4">
-    <h1 class="fw-bold mb-0">Sabor &amp; Saber</h1>
-  </header>
+  
 
   <main class="container my-5">
 
@@ -58,7 +56,24 @@
     <section id="contato" class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
         <h2 class="text-center mb-4">Fale conosco</h2>
-        <!-- Formulário será adicionado aqui no live code -->
+        <form>
+          <div class="mb-3">
+            <label for=" form-label ">Seu nome: </label>
+            <input type="text" class="form-control" placeholder="Nome completo">
+          </div>
+
+          <div class="mb-3">
+            <label for=" form-label ">Seu e-mail: </label>
+            <input type="email" class="form-control" placeholder="você@email.com">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Mensagem: </label>
+            <textarea class="form-control" rows="4" placeholder="Sua mensagem..."></textarea>
+          </div>
+
+          <button type="button" class="btn btn-danger w-100 "> Enviar mensagem </button>
+        </form>
       </div>
     </section>
 
@@ -67,15 +82,14 @@
   <!--
     LIVE CODE — PASSO 4: MODAL
     Adicionar modal de detalhes do prato ANTES do </body>.
-    O botão no card vai referenciar este modal via data-bs-target.
+    O botão no card vai referenciar este modal via data-bs-target. -->
 
     <div class="modal fade" id="modalPrato" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header bg-danger text-white">
             <h5 class="modal-title" id="modalNome">Nome do prato</h5>
-            <button type="button" class="btn-close btn-close-white"
-                    data-bs-dismiss="modal"></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
             <p id="modalCategoria" class="text-muted"></p>
@@ -87,14 +101,14 @@
         </div>
       </div>
     </div>
-  -->
-
+  
   <!--
     LIVE CODE — PASSO 5: JS DO BOOTSTRAP
     Necessário para Navbar hambúrguer e Modal funcionarem.
     Adicionar antes do </body>:
   -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="script.js" defer></script>
 </body>
