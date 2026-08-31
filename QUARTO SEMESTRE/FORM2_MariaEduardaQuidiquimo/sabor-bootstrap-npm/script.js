@@ -10,9 +10,9 @@ class Prato {
 }
 
 const pratos = [
-  new Prato('Feijoada Completa', 42.90, 'Prato Principal'),
-  new Prato('Coxinha Artesanal', 8.50, 'Petisco'),
-  new Prato('Brigadeiro Gourmet', 6.00, 'Sobremesa'),
+  new Prato('Macarrão com molho branco', 22.90, 'Prato Principal'),
+  new Prato('Bomba de frango com catupiry', 8.50, 'Petisco'),
+  new Prato('Bolo da Matilda (pedaço)', 8.00, 'Sobremesa'),
 ];
 
 function criarCard(prato) {
