@@ -1,0 +1,12 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-prato:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+
+.navbar-brand {
+  letter-spacing: 1px;
+}
