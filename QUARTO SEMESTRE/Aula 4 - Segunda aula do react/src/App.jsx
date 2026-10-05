@@ -1,51 +1,25 @@
 import Header from "./components/Header"
 import CardPrato from "./components/CardPrato"
-import Rodape from "./components/Rodape"
+import Footer from "./components/Rodape"
+import {cardapio} from "./data/cardapio"
+import "./App.css"
+import { useState } from "react"
 
-const cardapio = [
-  {
-    id: 1,
-    nome: "Feijoada",
-    preco: 42.90,
-    categoria: "Prato Principal",
-    descricao: "Bem completa e se pedir duas vem com brinde"
-  },
-
-  {
-    id: 2,
-    nome: "Moqueca",
-    preco: 49.90,
-    categoria: "Prato Principal",
-    descricao: "Deliciosa"
-  },
-
-  {
-    id: 3,
-    nome: "Pudim",
-    preco: 15.00,
-    categoria: "Sobremesa",
-    descricao: "Com bastante calda e cremoso"
-  },
-  {
-    id: 4,
-    nome: "Brownie",
-    preco: 18.00,
-    categoria: "Sobremesa",
-    descricao: "Casquinha em cima e macio por dentro"
-  },
-  {
-    id: 5,
-    nome: "Soda Italiana",
-    preco: 16.00,
-    categoria: "Bebida",
-    descricao: "Bebida refrescante para acompanhar sua refeição."
-  },
-]
 
 function App() {
+  const [totalItens, setTotalItens] = useState(0)
+
+  function adicionarAoPedido(quantidade) {
+    setTotalItens((valorAnterior) => valorAnterior + quantidade)
+  }
+
   return (
     <main className="app">
-    <Header />
+      <Header totalItens={totalItens} tagline="O melhor sabor com o toque da tecnologia e da educação!" />
+
+      <h2>Nosso Menu</h2>
+      <p className="total-itens">Cardápio com {cardapio.length} itens</p>
+
       <section className="cardapio">
         {cardapio.map((prato) => (
           <CardPrato
@@ -54,12 +28,12 @@ function App() {
             preco={prato.preco}
             categoria={prato.categoria}
             descricao={prato.descricao}
+            onAdicionar={adicionarAoPedido}
           />
         ))}
       </section>
-    <Rodape />
+      <Footer />
     </main>
-    
   )
 }
 
