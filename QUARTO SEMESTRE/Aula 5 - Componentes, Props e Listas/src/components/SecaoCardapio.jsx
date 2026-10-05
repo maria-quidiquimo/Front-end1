@@ -11,6 +11,8 @@ function SecaoCardapio({ titulo, pratos, onAdicionar }) {
             key={prato.id}
             nome={prato.nome}
             preco={prato.preco}
+            categoria={prato.categoria}
+            descricao={prato.descricao}
             vegetariano={prato.vegetariano}
             destaque={prato.destaque}
             disponivel={prato.disponivel}

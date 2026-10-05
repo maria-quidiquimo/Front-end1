@@ -6,17 +6,21 @@ import "./App.css";
 
 function App() {
   const [totalItens, setTotalItens] = useState(0);
-  // TODO (D2 — desafio): crie um estado "totalValor" para somar o valor do pedido em R$.
+  const [totalValor, setTotalValor] = useState(0);
 
-  function adicionarAoPedido(quantidade) {
-    setTotalItens(totalItens + quantidade);
+  function adicionarAoPedido(quantidade, preco) {
+    setTotalItens((prev) => prev + quantidade);
+    setTotalValor((prev) => prev + quantidade * preco);
   }
 
-  // TODO (D1 — desafio): crie a função limparPedido() que zera o total e passe para o Header.
+  function limparPedido() {
+    setTotalItens(0);
+    setTotalValor(0);
+  }
 
   return (
     <main className="app">
-      <Header totalItens={totalItens} />
+      <Header totalItens={totalItens} totalValor={totalValor} onLimparPedido={limparPedido} />
       <section className="cardapio">
         {cardapio.map((prato) => (
           <CardPrato

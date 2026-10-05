@@ -6,6 +6,7 @@ export const cardapio = [
     nome: "Feijoada",
     preco: 42.9,
     categoria: "Prato principal",
+    descricao: "Feijoada tradicional com arroz, farofa, couve e acompanhamentos.",
     vegetariano: false,
     destaque: true,
     disponivel: true
@@ -15,6 +16,7 @@ export const cardapio = [
     nome: "Moqueca",
     preco: 49.9,
     categoria: "Prato principal",
+    descricao: "Moqueca baiana em panela com peixe, coco e sabor marcante.",
     vegetariano: false,
     destaque: false,
     disponivel: false
@@ -24,6 +26,7 @@ export const cardapio = [
     nome: "Pudim",
     preco: 15.0,
     categoria: "Sobremesa",
+    descricao: "Pudim cremoso e caramelizado, servido em porção individual.",
     vegetariano: true,
     destaque: false,
     disponivel: true
@@ -33,6 +36,7 @@ export const cardapio = [
     nome: "Brigadeirão",
     preco: 13.5,
     categoria: "Sobremesa",
+    descricao: "Brigadeirão de chocolate com textura macia e irresistível.",
     vegetariano: true,
     destaque: true,
     disponivel: true
@@ -42,6 +46,17 @@ export const cardapio = [
     nome: "Suco de Caju",
     preco: 9.9,
     categoria: "Bebida",
+    descricao: "Suco natural de caju com sabor tropical e refrescante.",
+    vegetariano: true,
+    destaque: false,
+    disponivel: true
+  },
+  {
+    id: 7,
+    nome: "Salada Tropical",
+    preco: 18.5,
+    categoria: "Entrada",
+    descricao: "Mix de folhas, manga, castanha e molho cítrico, perfeito para começar.",
     vegetariano: true,
     destaque: false,
     disponivel: true

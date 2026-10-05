@@ -16,14 +16,34 @@
   color: #777;
   margin: 4px 0 0;
 }
+.pedido-resumo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
 .header .carrinho {
   display: inline-block;
-  margin-top: 12px;
   padding: 6px 14px;
   border-radius: 999px;
   background: #1a1a1a;
   color: #fff;
   font-weight: 700;
+  margin: 0;
+}
+.btn-limpar {
+  margin-top: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: #f1f1f4;
+  color: #333;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-limpar:hover {
+  background: #e3e3e8;
 }
 
 .cardapio {
@@ -86,7 +106,9 @@
 }
 
 .btn-adicionar,
-.btn-secundario {
+.btn-secundario,
+.btn-curtir,
+.btn-descricao {
   border: none;
   border-radius: 8px;
   padding: 10px;
@@ -97,12 +119,32 @@
   background: #e4002b;
   color: #fff;
 }
-.btn-adicionar:hover {
+.btn-adicionar:hover:not(:disabled) {
   background: #b80023;
+}
+.btn-adicionar:disabled {
+  background: #ddd;
+  color: #777;
+  cursor: not-allowed;
 }
 .btn-secundario {
   background: #f1f1f4;
   color: #333;
+}
+.btn-curtir {
+  background: #fff0f2;
+  color: #d92e52;
+}
+.btn-descricao {
+  background: #f1f1f4;
+  color: #333;
+}
+.acoes-prato {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .rodape {
