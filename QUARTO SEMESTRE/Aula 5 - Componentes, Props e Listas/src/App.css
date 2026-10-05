@@ -23,7 +23,7 @@
   gap: 12px;
   margin-top: 12px;
 }
-.header .carrinho {
+.pedido-resumo .carrinho {
   display: inline-block;
   padding: 6px 14px;
   border-radius: 999px;

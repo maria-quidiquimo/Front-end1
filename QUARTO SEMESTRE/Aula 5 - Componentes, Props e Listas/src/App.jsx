@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import CardPrato from "./components/CardPrato";
+import SecaoCardapio from "./components/SecaoCardapio";
 import { cardapio } from "./data/cardapio";
 import "./App.css";
+
+const categorias = ["Prato principal", "Sobremesa", "Bebida"]
 
 function App() {
   const [totalItens, setTotalItens] = useState(0);
@@ -21,21 +23,16 @@ function App() {
   return (
     <main className="app">
       <Header totalItens={totalItens} totalValor={totalValor} onLimparPedido={limparPedido} />
-      <section className="cardapio">
-        {cardapio.map((prato) => (
-          <CardPrato
-            key={prato.id}
-            nome={prato.nome}
-            preco={prato.preco}
-            categoria={prato.categoria}
-            descricao={prato.descricao}
-            vegetariano={prato.vegetariano}
-            destaque={prato.destaque}
-            disponivel={prato.disponivel}
-            onAdicionar={adicionarAoPedido}
-          />
-        ))}
-      </section>
+      <p className="contador">Cardápio com {cardapio.length} itens</p>
+      
+      {categorias.map((categoria) => (
+        <SecaoCardapio
+        key={categoria}
+        titulo={categoria}
+        pratos={cardapio.filter((prato) => prato.categoria === categoria)}
+        onAdicionar={adicionarAoPedido}
+        />
+      ))}
     </main>
   );
 }

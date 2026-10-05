@@ -55,7 +55,7 @@ export const cardapio = [
     id: 7,
     nome: "Salada Tropical",
     preco: 18.5,
-    categoria: "Entrada",
+    categoria: "Entrada" && "Prato principal",
     descricao: "Mix de folhas, manga, castanha e molho cítrico, perfeito para começar.",
     vegetariano: true,
     destaque: false,

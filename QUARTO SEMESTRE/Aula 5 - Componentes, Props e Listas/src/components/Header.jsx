@@ -1,4 +1,3 @@
-// Recebe o total de itens do pedido (quem guarda esse estado é o App).
 function Header({ totalItens, totalValor = 0, onLimparPedido }) {
   const totalFormatado = totalValor.toLocaleString("pt-BR", {
     style: "currency",

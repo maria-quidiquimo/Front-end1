@@ -4,7 +4,7 @@ import CardPrato from "./CardPrato";
 function SecaoCardapio({ titulo, pratos, onAdicionar }) {
   return (
     <section className="secao">
-      <h2>{titulo}</h2>
+      <h2 className="titulo-secao">{titulo}</h2>
       <div className="cardapio">
         {pratos.map((prato) => (
           <CardPrato
