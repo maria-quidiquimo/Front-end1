@@ -1,36 +1,37 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import SecaoCardapio from "./components/SecaoCardapio";
-import Rodape from "./components/Rodape";
+import CardPrato from "./components/CardPrato";
 import { cardapio } from "./data/cardapio";
 import "./App.css";
 
-// Lista com os nomes das categorias, na ordem em que aparecem na tela.
-const categorias = ["Prato principal", "Sobremesa", "Bebida"];
-
 function App() {
-  // (igual à aula 4) total de itens do pedido
   const [totalItens, setTotalItens] = useState(0);
+  // TODO (D2 — desafio): crie um estado "totalValor" para somar o valor do pedido em R$.
 
   function adicionarAoPedido(quantidade) {
     setTotalItens(totalItens + quantidade);
   }
 
+  // TODO (D1 — desafio): crie a função limparPedido() que zera o total e passe para o Header.
+
   return (
     <main className="app">
       <Header totalItens={totalItens} />
-
-      {/* Para cada categoria, uma SecaoCardapio só com os pratos daquela categoria */}
-      {categorias.map((categoria) => (
-        <SecaoCardapio
-          key={categoria}
-          titulo={categoria}
-          pratos={cardapio.filter((prato) => prato.categoria === categoria)}
-          onAdicionar={adicionarAoPedido}
-        />
-      ))}
-
-      <Rodape cidade="Itu/SP" />
+      <section className="cardapio">
+        {cardapio.map((prato) => (
+          <CardPrato
+            key={prato.id}
+            nome={prato.nome}
+            preco={prato.preco}
+            categoria={prato.categoria}
+            descricao={prato.descricao}
+            vegetariano={prato.vegetariano}
+            destaque={prato.destaque}
+            disponivel={prato.disponivel}
+            onAdicionar={adicionarAoPedido}
+          />
+        ))}
+      </section>
     </main>
   );
 }
