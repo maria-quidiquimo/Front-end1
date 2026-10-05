@@ -1,16 +1,7 @@
 import { useState } from "react";
 import Selo from "./Selo";
 
-function CardPrato({
-  nome,
-  preco,
-  categoria,
-  vegetariano = false,
-  destaque = false,
-  disponivel = true,
-  onAdicionar,
-  descricao,
-}) {
+function CardPrato({ nome, preco, categoria, vegetariano = false, destaque = false, disponivel = true, onAdicionar, descricao, }) {
   const [quantidade, setQuantidade] = useState(1);
   const [curtidas, setCurtidas] = useState(12);
   const [mostrarDescricao, setMostrarDescricao] = useState(false);
@@ -39,16 +30,18 @@ function CardPrato({
   }
 
   return (
-    <article className="card-prato">
+    <article className={ destaque ? "card-prato destaque" : "card-prato"}>
       <span className="categoria">{categoria}</span>
       <h2>
         {categoria === "Sobremesa" ? "🍰" : ""}
         {nome}
       </h2>
 
+      {/* SELOS */}
       <div className="selos">
         {destaque && <Selo texto="Destaque" tipo="destaque" />}
         {vegetariano && <Selo texto="Vegetariano" tipo="veg" />}
+        {!disponivel && <Selo texto="Esgotado" tipo="esgotado"/>}
       </div>
 
       <p className="preco">{precoFormatado}</p>
@@ -68,7 +61,9 @@ function CardPrato({
 
       {mostrarDescricao && <p className="descricao">{descricao}</p>}
 
-      <div className="quantidade">
+  { disponivel ? (
+  <>   
+  <div className="quantidade">
         <button type="button" onClick={diminuir} aria-label={`Diminuir quantidade de ${nome}`}>
           -
         </button>
@@ -86,6 +81,12 @@ function CardPrato({
       >
         {disponivel ? "Adicionar ao Pedido" : "Indisponível"}
       </button>
+      </>
+      ) : (
+        <button type="button" className="btn-indisponivel" disabled>
+          Indisponível
+        </button>
+      )}
     </article>
   );
 }
